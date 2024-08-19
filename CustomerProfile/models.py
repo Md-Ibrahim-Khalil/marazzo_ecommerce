@@ -19,7 +19,7 @@ def Phone_number_validate(phone_number):
 
 
 class CustomerProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, blank=False, null=False)
     address = models.CharField(max_length=255)
     phone_number = models.CharField(validators=[PHONE_REGEX], max_length=11, unique=True, blank=False, null=False)
 
